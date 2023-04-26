@@ -1,0 +1,349 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  width: 80%;
+  position: relative;
+}
+main {
+  flex-grow: 1;
+  margin-top: 70px;
+}
+footer {
+  flex-shrink: 0;
+}
+.page-footer {
+  padding: 0;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+nav {
+  background-color: #294c78;
+}
+.page-footer .footer-copyright {
+  background-color: #294c78;
+}
+.preloader-wrapper {
+  margin: 50px auto;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 66px auto;
+  position: relative;
+}
+.wrapper__card {
+  max-width: 250px;
+  min-height: 420px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 15px 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card-image {
+  background-color: #b0adad;
+  border-radius: 5px;
+}
+.card .card-title {
+  font-size: 19px;
+  font-weight: 600;
+}
+.card .card-content {
+  padding: 10px 20px !important;
+  flex-grow: 1;
+}
+.card__description {
+  margin: 0 0 15px 0 !important;
+}
+.card__pay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  border-top: 1px solid #b0adad;
+}
+.card__btn {
+  padding: 13px 35px;
+  border-radius: 4px;
+  transition: all 1s;
+  border: 2px #3d5be0 solid;
+  background-color: #3d5be0;
+}
+.price {
+  font-size: 25px;
+}
+.card__btn:hover {
+  background-color: transparent;
+  border: 2px black solid;
+  transition: all 0.5s;
+}
+.cart {
+  display: none;
+  cursor: pointer;
+}
+.cart_header {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: fixed;
+  top: 0rem;
+  right: 8%;
+  z-index: 5;
+}
+.cart__quantity_green {
+  color: limegreen;
+}
+.cart__quantity_red {
+  color: rgb(214, 53, 53);
+}
+.cart__quantity_red,
+.cart__quantity_green {
+  font-size: 16px;
+  font-weight: 600;
+}
+.basket {
+  margin: auto;
+  padding: 50px;
+  position: fixed;
+  z-index: 8;
+  top: 15%;
+  background-color: #294c78fa;
+  border-radius: 15px;
+  color: #a8a6a6;
+  box-shadow: 7px 4px 98px 0px rgba(6, 99, 255, 0.57);
+  animation: show 0.5s ease-in;
+  &__close {
+    cursor: pointer;
+    color: #000000;
+    transition: ease-in-out all 0.4s;
+  }
+  &__close:hover {
+    color: red;
+  }
+  &__empty {
+    color: #ffffff;
+    margin: 0 0 175px 0;
+    text-align: center;
+  }
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+  }
+  &__title {
+    margin: 10px 0 0 0;
+  }
+  &__wrap-card {
+    overflow-y: scroll;
+    height: 480px;
+  }
+  &__total-price {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  &-card {
+    display: flex;
+    padding: 0 50px 0 0;
+    margin: 0 0 22px 0;
+    border: 2px solid rgba(0, 0, 0, 0.577);
+    border-radius: 5px;
+    &__img {
+      max-height: 180px;
+    }
+    &__title {
+      display: block;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 37px;
+      margin: 0 0 10px 0;
+    }
+    &__price {
+      display: block;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+    }
+    &__quantity[type='text']:not(.browser-default) {
+      background-color: #ffffff;
+      padding: 4px 14px 4px 35px;
+      width: 35px;
+      border-radius: 16px;
+      margin: 44px 0 17px 0;
+      outline: none;
+    }
+    &__wrap-price {
+      width: 810px;
+      padding: 30px;
+    }
+    &__clear {
+      cursor: pointer;
+      margin: 56px 0 0 15px;
+      transition: ease-in-out all 0.3s;
+    }
+    &__clear:hover {
+      color: rgb(69, 42, 7);
+    }
+  }
+  &__bottom-wrap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+.basket-card__increment,
+.basket-card__decrement {
+  width: 37px;
+  height: 32px;
+  border: none;
+  border-radius: 7px;
+  background-color: #fff;
+  font-size: 22px;
+  transition: ease-in-out all 0.3s;
+}
+.basket-card__increment:hover {
+  background-color: #29ed95;
+}
+.basket-card__decrement:hover {
+  background-color: #da6a2e;
+}
+.basket-card__increment:focus {
+  background-color: #ffffff;
+}
+.basket-card__decrement:focus {
+  background-color: #ffffff;
+}
+.basket-card__decrement {
+  margin: 0 0 0 9px;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 15%;
+  }
+}
+#toast-container{ 
+  animation: showToast ease 0.5s;
+}
+@keyframes showToast {
+  from {
+    opacity: 0;
+    transform: translateY(12rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 1750px) {
+  .cart_header {
+    right: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header {
+    position: relative;
+  }
+  .cart_header {
+    display: none;
+  }
+  .cart {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: #3d5be0;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 5;
+  }
+}
+@media screen and (max-width: 830px) {
+  .toast{
+    top:0;
+  }
+  .btn {
+      margin-top: 10px;
+    }
+  .basket-card {
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto 20px auto;
+    max-width: 250px;
+    align-items: center;
+    border: 4px solid rgb(0 0 0);
+    position: relative;
+    &__img {
+      max-height: 250px;
+      margin: 0 0 15px 0;
+    }
+    &__quantity[type='text']:not(.browser-default) {
+      margin: 0 0 15px 0;
+    }
+    &__wrap-price {
+      width: 100%;
+      padding: 0;
+    }
+    &__price {
+      margin: 0 0 15px 0;
+    }
+    &__clear {
+      margin: 0;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #ffffff;
+    }
+  }
+  .basket-card__wrap-crement {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-height: 750px) {
+  .app {
+    margin: 0;
+  }
+  .basket {
+    padding: 20px;
+  }
+  .basket__total-price {
+    font-size: 25px;
+    line-height: 17px;
+  }
+  .basket__wrap-card {
+    overflow-y: scroll;
+    height: 390px;
+  }
+}
+@media screen and (max-width: 654px) {
+  .main__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .basket {
+    padding: 10px;
+    height: auto;
+  }
+}
